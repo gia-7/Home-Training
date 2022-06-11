@@ -1,0 +1,53 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    description: 'Documento que describe al trainer',
+    required: [
+      'id_trainer',
+      'nombre',
+      'direccion',
+      'celular',
+      'correo'
+    ],
+    properties: {
+      id_trainer: {
+        bsonType: 'int',
+        description: 'Es la identifiacion del trainer y es requerido'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Nombre debe ser un string y es requerido'
+      },
+      direccion: {
+        bsonType: 'object',
+        required: [
+          'pais',
+          'ciudad'
+        ],
+        properties: {
+          pais: {
+            bsonType: 'string',
+            description: 'pais debe ser string y es requerido'
+          },
+          ciudad: {
+            bsonType: 'string',
+            description: 'ciudad deber ser string y es requerido'
+          },
+          calle: {
+            bsonType: 'string',
+            description: 'calle deber ser string y no es requerido'
+          }
+        }
+      },
+      celular: {
+        bsonType: 'int',
+        description: 'celular debe ser un int y es requerido'
+      },
+      correo: {
+        bsonType: 'string',
+        pattern: '@gmail.com$',
+        description: 'correo debe ser string y es requerido'
+      }
+    }
+  }
+}
