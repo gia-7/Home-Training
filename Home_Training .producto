@@ -1,0 +1,100 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    description: 'Documento que describe el producto',
+    required: [
+      'id_producto',
+      'proveedor',
+      'categoria',
+      'nombre',
+      'precio',
+      'stock'
+    ],
+    properties: {
+      id_producto: {
+        bsonType: 'int',
+        description: 'id_producto debe ser int y es requerido'
+      },
+      proveedor: {
+        bsonType: 'object',
+        description: 'documento que describira al proveedor',
+        required: [
+          'id_proveedor',
+          'nombre',
+          'direccion',
+          'celular'
+        ],
+        properties: {
+          id_proveedor: {
+            bsonType: 'int',
+            description: 'id_proveedor debe ser int y es requerido'
+          },
+          nombre: {
+            bsonType: 'string',
+            description: 'Nombre debe ser un string y es requerido'
+          },
+          direccion: {
+            bsonType: 'object',
+            required: [
+              'pais',
+              'ciudad'
+            ],
+            properties: {
+              pais: {
+                bsonType: 'string',
+                description: 'pais debe ser string y es requerido'
+              },
+              ciudad: {
+                bsonType: 'string',
+                description: 'ciudad deber ser string y es requerido'
+              },
+              calle: {
+                bsonType: 'string',
+                description: 'calle deber ser string y no es requerido'
+              }
+            }
+          },
+          celular: {
+            bsonType: 'int',
+            description: 'celular debe ser un int y es requerido'
+          }
+        }
+      },
+      categoria: {
+        bsonType: 'object',
+        description: 'documento que describira la categoria',
+        required: [
+          'id_categoria',
+          'nombre',
+          'descripcion'
+        ],
+        properties: {
+          id_categoria: {
+            bsonType: 'int',
+            description: 'id_categoria debe ser int y es requerido'
+          },
+          nombre: {
+            bsonType: 'string',
+            description: 'Nombre debe ser un string y es requerido'
+          },
+          descripcion: {
+            bsonType: 'string',
+            description: 'descripcion debe ser un string y es requerido'
+          }
+        }
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Nombre debe ser un string y es requerido'
+      },
+      precio: {
+        bsonType: 'decimal',
+        description: 'precio debe ser  y es requerido'
+      },
+      stock: {
+        bsonType: 'int',
+        description: 'stock debe ser int y es requerido'
+      }
+    }
+  }
+}
